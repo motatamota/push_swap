@@ -64,6 +64,8 @@ int	main(int ac, char **av)
 	t_st	st;
 
 	st.cp = 0;
+	st.sr = 0;
+	st.box = 0;
 	if (ac == 1)
 		return (0);
 	st.box = (int *)malloc(sizeof(int) * (ac - 1));
