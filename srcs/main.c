@@ -80,7 +80,7 @@ int	main(int ac, char **av)
 	freed(&st);
 }
 
-__attribute__((destructor))
-static void destructor() {
-    system("leaks -q push_swap");
-}
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q push_swap");
+// }

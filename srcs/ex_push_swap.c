@@ -53,6 +53,8 @@ void	ex_set_stack_b(t_st *st)
 	n = 0;
 	zero_it(&it);
 	st->cp = (int *)malloc(sizeof(int) * (st->len));
+	if (!st->cp)
+		return ;
 	while (n < st->len)
 	{
 		if (*(st->box + n) <= st->second)
