@@ -45,7 +45,7 @@ void	zero_it(t_int *it)
 	it->f = 0;
 }
 
-void	ex_set_stack_b(t_st *st)
+int	ex_set_stack_b(t_st *st)
 {
 	int		n;
 	t_int	it;
@@ -54,7 +54,7 @@ void	ex_set_stack_b(t_st *st)
 	zero_it(&it);
 	st->cp = (int *)malloc(sizeof(int) * (st->len));
 	if (!st->cp)
-		return ;
+		return (1);
 	while (n < st->len)
 	{
 		if (*(st->box + n) <= st->second)
@@ -65,14 +65,21 @@ void	ex_set_stack_b(t_st *st)
 			ex_b_high(st, &it, n);
 		n++;
 	}
+	return (0);
 }
 
 void	ex_push_swap(t_st *st)
 {
 	if (!intcopy_sorted(st))
 		return ;
+	if (st->len <= 5)
+	{
+		minips(st);
+		return ;
+	}
 	ex_set_len(st);
-	ex_set_stack_b(st);
+	if (ex_set_stack_b(st))
+		return ;
 	ex_stack_b_half(st);
 	ex_stack_b_all(st);
 	ex_stack_b_end(st);

@@ -65,5 +65,10 @@ void	ex_stack_b_end(t_st *st);
 void	ex_stack_a(t_st *st);
 int		ex_push2(t_st *st, int n, int k);
 int		ex_push1(t_st *st, int n, int k);
+void	minips(t_st *st);
+int		newboxsr(t_st *st);
+int		newboxsr4(t_st *st);
+void	remakebox4(t_st *st, int *box, int pos);
+void	remakesr4(t_st *st, int *sr);
 
 #endif

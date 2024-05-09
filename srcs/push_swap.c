@@ -28,6 +28,8 @@ int	intcopy_sorted(t_st *st)
 	}
 	myqsort(cp, 0, st->len - 1);
 	st->sr = cp;
+	if (!ft_memcmp(st->box, st->sr, sizeof(int) * st->len))
+		return (0);
 	return (1);
 }
 
