@@ -1,1 +1,4 @@
 tester/
+*.o
+push_swap
+checker
