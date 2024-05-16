@@ -30,14 +30,10 @@ $(NAME): $(OBJ) $(PLIB)
 $(PLIB):
 	make -C printf
 
-bonus:
-	make -C checker_d
-
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
 
 clean:
-	make -C checker_d clean
 	make -C printf fclean
 	rm -f $(OBJ)
 
