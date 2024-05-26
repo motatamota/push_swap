@@ -55,6 +55,7 @@ int	set_box(t_st *st, int ac, char **av)
 		*(st->box + n - 1) = ft_atoi(num);
 		n++;
 	}
+	checkbox(st->box);
 	st->len = ac - 1;
 	return (1);
 }

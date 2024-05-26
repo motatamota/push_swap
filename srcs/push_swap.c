@@ -84,3 +84,8 @@ void	push_swap(t_st *st)
 	stack_b_all(st);
 	stack_a(st);
 }
+
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q push_swap");
+}
