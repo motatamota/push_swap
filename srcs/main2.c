@@ -6,7 +6,7 @@
 /*   By: tashiget <tashiget@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 08:36:42 by tashiget          #+#    #+#             */
-/*   Updated: 2024/05/27 09:31:08 by tashiget         ###   ########.fr       */
+/*   Updated: 2024/05/27 09:47:01 by tashiget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	checkint(char *str)
 	ans = 0;
 	minus = 1;
 	if (*str == '-')
+	{
 		minus = -1;
+		str++;
+	}
 	while (*str)
 	{
 		ans = 10 * ans + (*str - '0');
