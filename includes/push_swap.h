@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <limits.h>
-#include <stdio.h>
+// #include <stdio.h>
 # include "ft_printf.h"
 # include "libft.h"
 
