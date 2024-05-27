@@ -13,6 +13,8 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
+# include <limits.h>
+#include <stdio.h>
 # include "ft_printf.h"
 # include "libft.h"
 
@@ -70,5 +72,6 @@ int		newboxsr(t_st *st);
 int		newboxsr4(t_st *st);
 void	remakebox4(t_st *st, int *box, int pos);
 void	remakesr4(t_st *st, int *sr);
+int		checkint(char *str);
 
 #endif

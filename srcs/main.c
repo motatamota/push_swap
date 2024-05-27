@@ -25,6 +25,8 @@ int	checknum(char *num)
 			return (0);
 		n++;
 	}
+	if (!checkint(num))
+		return (0);
 	return (1);
 }
 
@@ -36,6 +38,26 @@ void	freed(t_st *st)
 		free(st->sr);
 	if (st->cp)
 		free(st->cp);
+}
+
+int	checkbox(int n, int *box)
+{
+	int	m;
+	int	l;
+
+	m = 0;
+	while (m < n)
+	{
+		l = 0;
+		while (l < m)
+		{
+			if (*(box + m) == *(box + l))
+				return (0);
+			l++;
+		}
+		m++;
+	}
+	return (1);
 }
 
 int	set_box(t_st *st, int ac, char **av)
@@ -55,7 +77,11 @@ int	set_box(t_st *st, int ac, char **av)
 		*(st->box + n - 1) = ft_atoi(num);
 		n++;
 	}
-	checkbox(st->box);
+	if (!checkbox(ac - 1, st->box))
+	{
+		ft_printf("Error\n");
+		return (0);
+	}
 	st->len = ac - 1;
 	return (1);
 }

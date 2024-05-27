@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 SRCDIR = srcs
 INCDIR = includes
 SRC = srcs/ex_push_swap.c\
@@ -15,7 +15,8 @@ SRC = srcs/ex_push_swap.c\
 		srcs/qsort.c\
 		srcs/minips.c\
 		srcs/minips2.c\
-		srcs/minips3.c
+		srcs/minips3.c\
+		srcs/main2.c
 BOUNUS = checker
 OBJ = $(SRC:%.c=%.o)
 PLIB = printf/libftprintf.a
